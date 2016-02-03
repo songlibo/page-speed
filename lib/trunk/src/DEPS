@@ -13,7 +13,7 @@
 # limitations under the License.
 
 vars = {
-  "chromium_trunk": "http://src.chromium.org/svn/trunk",
+  "chromium_trunk": "https://src.chromium.org/svn/trunk",
   "chromium_revision": "@161115",
   "chromium_deps_root": "src/third_party/chromium_deps",
   "modpagespeed_src": "http://modpagespeed.googlecode.com/svn/trunk",
@@ -24,6 +24,7 @@ vars = {
   "protobuf_revision": "@head",
   "drp_src": "http://domain-registry-provider.googlecode.com/svn/trunk",
   "drp_revision": "@29",
+  "libpagespeed_svn": "https://github.com/songlibo/page-speed/trunk",
 }
 
 deps = {
@@ -89,15 +90,15 @@ deps = {
   "src/tools/grit": From(Var("chromium_deps_root")),
   "src/tools/gyp": From(Var("chromium_deps_root")),
 
-  "src/third_party/gflags": "/deps/gflags-2.0",
-  "src/third_party/giflib": "/deps/giflib-4.1.6",
-  "src/third_party/icu": "/deps/icu461",
-  "src/third_party/libjpeg": "/deps/jpeg-8c",
-  "src/third_party/libpng": "/deps/libpng-1.5.4",
-  "src/third_party/libwebp": "/deps/libwebp-0.2.1",
-  "src/third_party/nacl_sdk": "/deps/nacl_sdk",
-  "src/third_party/optipng": "/deps/optipng-0.7.4",
-  "src/third_party/zlib": "/deps/zlib-1.2.5",
+  "src/third_party/gflags": Var("libpagespeed_svn") + "/deps/gflags-2.0/",
+  "src/third_party/giflib": Var("libpagespeed_svn") + "/deps/giflib-4.1.6/",
+  "src/third_party/icu": Var("libpagespeed_svn") + "/deps/icu461/",
+  "src/third_party/libjpeg": Var("libpagespeed_svn") + "/deps/jpeg-8c/",
+  "src/third_party/libpng": Var("libpagespeed_svn") + "/deps/libpng-1.5.4/",
+  "src/third_party/libwebp": Var("libpagespeed_svn") + "/deps/libwebp-0.2.0/",
+  "src/third_party/nacl_sdk": Var("libpagespeed_svn") + "/deps/nacl_sdk/",
+  "src/third_party/optipng": Var("libpagespeed_svn") + "/deps/optipng-0.7.4/",
+  "src/third_party/zlib": Var("libpagespeed_svn") + "/deps/zlib-1.2.5/",
 }
 
 
